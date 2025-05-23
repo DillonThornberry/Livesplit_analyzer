@@ -57,6 +57,7 @@ def main():
 
 
     print(df.head())
+    
     df.to_csv(f"./csv/{sys.argv[1].split('.')[0]}.csv", index=True)
     print(f"Data saved to {sys.argv[1].split('.')[0]}.csv")
 
