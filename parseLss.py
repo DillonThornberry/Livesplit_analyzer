@@ -38,7 +38,8 @@ def main():
     df = pd.DataFrame(attemptList)
     df.set_index('id', inplace=True)
 
-    # apeDf['started'] = pd.to_datetime(apeDf['started'], format='%m/%d/%YT%H:%M:%S.%fZ')
+    df['started'] = pd.to_datetime(df['started'], format='%m/%d/%Y %H:%M:%S')
+    df['ended'] = pd.to_datetime(df['ended'], format='%m/%d/%Y %H:%M:%S')
     # apeDf['ended'] = pd.to_datetime(apeDf['ended'], format='%Y-%m-%dT%H:%M:%S.%fZ')
     # apeDf['realTime'] = pd.to_timedelta(apeDf['realTime'])
 
