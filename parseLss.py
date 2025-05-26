@@ -5,12 +5,15 @@ import sys
 
 def main():
 
-    if len(sys.argv) < 2:
-        print("Usage: python parseLss.py <lss_file>")
+    if len(sys.argv) < 3:
+        print("Usage: python parseLss.py <lss_file> <optional: folder>")
         sys.exit(1)
 
+    folder = None
+    if len(sys.argv) == 3:
+        folder = sys.argv[2]
     # Parse the XML file
-    tree = ET.parse(f"./lss/{sys.argv[1]}")  # Replace with your actual file path
+    tree = ET.parse(f"./lss/{folder + '/' if folder else '' }{sys.argv[1]}")  # Replace with your actual file path
     root = tree.getroot()
 
     attempts = root.findall('.//AttemptHistory/Attempt')
@@ -58,7 +61,7 @@ def main():
 
     print(df.head())
     
-    df.to_csv(f"./csv/{sys.argv[1].split('.')[0]}.csv", index=True)
+    df.to_csv(f"./csv/{folder + '/' if folder else ''}{sys.argv[1].split('.')[0]}.csv", index=True)
     print(f"Data saved to {sys.argv[1].split('.')[0]}.csv")
 
 
