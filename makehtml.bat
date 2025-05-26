@@ -1,1 +1,1 @@
-jupyter nbconvert runstats.ipynb --to html --TemplateExporter.exclude_input=True
+jupyter nbconvert runstats.ipynb --to html --TemplateExporter.exclude_input=True --output index --output-dir static

@@ -1,6 +1,6 @@
 /venv
 *.html
-!runstats.html
+!index.html
 /.ipynb_checkpoints
 /lss/no-lblj
 /csv/no-lblj
